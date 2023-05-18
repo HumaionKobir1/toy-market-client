@@ -37,8 +37,8 @@ const Navber = () => {
                 <div className='flex justify-center items-center gap-3'>
                     {/* <img className='w-11 h-11 rounded-full' src=''  alt="" /> */}
                     
-                    <Link to='/' className='inline-flex md:block items-center'>
-                    <button className='btn btn-outline btn-error'>LOGIN</button>
+                    <Link to='/login' className='inline-flex md:block items-center'>
+                    <button className='btn btn-outline text-[#e2195f]'>LOGIN</button>
                     </Link>
                 </div>
 
