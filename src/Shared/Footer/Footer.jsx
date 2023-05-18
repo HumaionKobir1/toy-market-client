@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <div className=' bg-gray-100'>
             <div className='md:w-5/6 mx-auto grid md:grid-cols-4 md:py-20 py-5 px-3'>
-                <div className='md:border-e-2 text-black md:px-20 mb-3 md:mb-0'>
+                <div className='md:border-e-2 text-black  mb-3 md:mb-0'>
                     <img src="https://htmldemo.net/kidol/kidol/assets/img/logo.png" alt="" />
                     <p className="my-2 flex gap-2"><FaLocationArrow></FaLocationArrow> Kidol store Bangladesh</p>
                     <p className='flex gap-2'><FaPhone></FaPhone> 0123-456-789</p>
