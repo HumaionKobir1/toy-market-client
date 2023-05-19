@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
     Bars3Icon,
     XMarkIcon,
   } from '@heroicons/react/24/solid'
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Navber = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const {user} = useContext(AuthContext);
+
+
     return (
         <div className='w-full md:w-5/6 mx-auto px-3'>
         <div className=' py-5 mx-auto '>
@@ -35,11 +39,15 @@ const Navber = () => {
                 </ul>
 
                 <div className='flex justify-center items-center gap-3'>
-                    {/* <img className='w-11 h-11 rounded-full' src=''  alt="" /> */}
+                    {user && <img className='w-11 h-11 rounded-full' src={user.photoURL} title={user.displayName}  alt="" /> }
                     
+                    {user ? 
+                    <button className='bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3   font-bold py-3 px-4 rounded'>Logout</button> :
+
                     <Link to='/login' className='inline-flex md:block items-center'>
-                    <button className='btn btn-outline text-[#e2195f]'>LOGIN</button>
+                    <button className='bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3   font-bold py-3 px-4 rounded'>Login</button>
                     </Link>
+                    }
                 </div>
 
                 {/* Mobile Navbar Section */}
