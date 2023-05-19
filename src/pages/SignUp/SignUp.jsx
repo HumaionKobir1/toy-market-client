@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaUser, FaLock, FaFacebook, FaGoogle, FaTwitter, FaEnvelope, FaImage } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -12,7 +14,14 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photo.value;
-        console.log(name, email, password, photoUrl);       
+        console.log(name, email, password, photoUrl);
+        
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error.message))
 
     }
 
