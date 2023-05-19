@@ -2,6 +2,14 @@ import { FaUser, FaLock, FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+    }
     return (
         <div className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
             <div className="w-full   px-4 grid items-center justify-center">
@@ -14,10 +22,10 @@ const Login = () => {
             </div>
             <div className="w-full  items-center justify-center">
                 <h2 className="text-4xl font-bold mb-6 text-center md:text-left">Login</h2>
-                <form className="w-full max-w-sm">
+                <form onSubmit={handleLogin} className="w-full max-w-sm">
                 <div className="mb-4">
-                    <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
-                    Name
+                    <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                    Email
                     </label>
 
                     <div className="flex items-center">
@@ -27,8 +35,9 @@ const Login = () => {
                     <input
                         className="appearance-none border rounded pl-10 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="name"
-                        type="text" 
-                        placeholder="Enter your name"
+                        type="email"
+                        name='email' 
+                        placeholder="Enter your email"
                     />
                     </div>
                 </div>
@@ -45,6 +54,7 @@ const Login = () => {
                         className="appearance-none border rounded pl-10 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="password"
                         type="password"
+                        name='password'
                         placeholder="Enter your password"
                     />
                     </div>
@@ -62,7 +72,7 @@ const Login = () => {
                 <div>
                     <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-                    type="button"
+                    type="submit"
                     >
                     Login
                     </button>
