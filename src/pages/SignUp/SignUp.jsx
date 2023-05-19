@@ -53,7 +53,8 @@ const SignUp = () => {
                             name='photo'
                             className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
                             placeholder="Enter photo URL"
-                        />                    </div>
+                        />                    
+                    </div>
                 </div>
 
                 <div className='mb-4'>
@@ -66,7 +67,8 @@ const SignUp = () => {
                             name='email'
                             className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
                             placeholder="Enter your email"
-                        />                    </div>
+                        />                    
+                    </div>
                     
                 </div>
                 
@@ -80,7 +82,8 @@ const SignUp = () => {
                             name='password'
                             className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
                             placeholder="Enter your password"
-                        />                    </div>
+                        />                    
+                    </div>
                 </div>
 
                 <div className='flex gap-1 justify-start'>
@@ -121,90 +124,6 @@ const SignUp = () => {
                     <button><FaGoogle className='w-6 h-6'></FaGoogle></button>
                     <button><FaTwitter className='w-6 h-6'></FaTwitter></button>
                 </div>
-
-                {/* <form onSubmit={handleRegister} className="w-full max-w-sm">
-                    <div className="mb-4">
-                        <label  className="block text-gray-700 font-bold mb-2">
-                        Name
-                        </label>
-
-                        <div className="relative">
-                        <input
-                            type="text"
-                            name='userName'
-                            className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
-                            placeholder="Enter your name"
-                        />
-                        </div>
-                    </div>
-                    <div className="mb-4">
-                        <label  className="block text-gray-700 font-bold mb-2">
-                        Email
-                        </label>
-                        <div className="relative">
-                        <FaEnvelope className="absolute text-gray-500 left-3 top-2/4 transform -translate-y-2/4" />
-                        <input
-                            type="email"
-                            id="email"
-                            name='email'
-                            className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
-                            placeholder="Enter your email"
-                        />
-                        </div>
-                    </div>
-                    <div className="mb-4">
-                        <label  className="block text-gray-700 font-bold mb-2">
-                        PhotoUrl
-                        </label>
-
-                        <div className="relative">
-                        <FaImage className="absolute text-gray-500 left-3 top-2/4 transform -translate-y-2/4" />
-                        <input
-                            type="text"
-                            id="photoUrl"
-                            name='photo'
-                            className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
-                            placeholder="Enter photo URL"
-                        />
-                        </div>
-                    </div>
-                    <div className="mb-4">
-                        <label  className="block text-gray-700 font-bold mb-2">
-                        Password
-                        </label>
-                        <div className="relative">
-                        <FaLock className="absolute text-gray-500 left-3 top-2/4 transform -translate-y-2/4" />
-                        <input
-                            type={showPassword ? 'text' : 'password'}
-                            id="password"
-                            name='password'
-                            className="pl-10 appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"
-                            placeholder="Enter your password"
-                        />
-                        </div>
-                    </div>
-                    <div className="top-0 right-0 mr-3 mt-4">
-                    <input
-                        type="checkbox"
-                        id="showPassword"
-                        className="form-checkbox text-gray-700"
-                        checked={showPassword}
-                        onChange={handleShowPassword}
-                    />
-                    <label htmlFor="showPassword" className="ml-2 text-gray-700">
-                    Show Password
-                    </label>
-                </div>
-                    
-                    <div className="flex items-center justify-between mt-6">
-                        <button
-                        className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        type="submit"
-                        >
-                        Sign Up
-                        </button>
-                    </div>
-                </form> */}
                 
             </div>
         </div>
