@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, signInWithGoogle} = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -19,6 +19,15 @@ const Login = () => {
             console.log(user);
         })
         .catch(error => console.log(error.message))
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => console.log(error));
     }
     return (
         <div className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
@@ -92,7 +101,7 @@ const Login = () => {
                     <p>Or login with</p>
                     <div className='flex gap-3'>
                         <button><FaFacebook className='w-6 h-6'></FaFacebook></button>
-                        <button><FaGoogle className='w-6 h-6'></FaGoogle></button>
+                        <button onClick={handleGoogleSignIn}><FaGoogle className='w-6 h-6'></FaGoogle></button>
                         <button><FaTwitter className='w-6 h-6'></FaTwitter></button>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const {createUser, updateUserData} = useContext(AuthContext);
+    const {createUser, updateUserData, signInWithGoogle} = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -37,6 +37,15 @@ const SignUp = () => {
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
       };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => console.log(error));
+    }
 
     return (
         <div className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
@@ -139,7 +148,7 @@ const SignUp = () => {
                 <p className='ml-44 mt-5 text-lg'>Or</p>
                 <div className='flex gap-4 ml-32 mt-5'>
                     <button><FaFacebook className='w-6 h-6'></FaFacebook></button>
-                    <button><FaGoogle className='w-6 h-6'></FaGoogle></button>
+                    <button onClick={handleGoogleSignIn}><FaGoogle className='w-6 h-6'></FaGoogle></button>
                     <button><FaTwitter className='w-6 h-6'></FaTwitter></button>
                 </div>
                 
