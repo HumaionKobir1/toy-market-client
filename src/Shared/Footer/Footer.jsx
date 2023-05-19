@@ -29,7 +29,7 @@ const Footer = () => {
                 <div className=' text-black mb-3 md:mb-0 md: pl-3'>
                     <h3 className='text-3xl mb-5'>Newsletter</h3>
                     <p className='mb-4'>Subscribe to our newsletters now and stay up to date with new collection and exclusive offers.</p>
-                    <input className='rounded p-3' type="text" placeholder='Enter Your Email' /> <button className='btn bg-orange-400 border-none'>Sign up</button>
+                    <input className='rounded p-3' type="text" placeholder='Enter Your Email' /> <button className='btn text-black bg-[#f5cfb7] border-none'>Sign up</button>
                 </div>
             </div>
             <p className='text-center text-black p-2 -mt-5'><small>All rights reserved Kidol</small></p>
