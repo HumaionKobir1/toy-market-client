@@ -2,8 +2,8 @@
 const Banner = () => {
     return (
         <div>
-            <div className="bg-img md:h-[550px] bg-cover bg-center">
-                <div className="md:w-5/6 mx-auto px-3 flex flex-col justify-center items-start md:h-full">
+            <div className="md:w-5/6 mx-auto px-3 bg-img md:h-[550px] bg-cover bg-center">
+                <div className=" flex flex-col justify-center items-start md:h-full">
                     <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 mt-16 w-5/6 md:w-1/2">
                     Shop Best Electronic Toys For Your Children
                     

@@ -14,7 +14,7 @@ import { Navigation } from "swiper";
 const Carousel = () => {
   return (
     <div className="w-full md:w-5/6 mx-auto px-3 md:mt-16 mt-10">
-      <h1 className="text-5xl text-center font-semibold">Our Testimonial</h1>
+      <h1 className="md:text-5xl text-4xl text-gray-700 text-center font-semibold">Our Testimonial</h1>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper md:-mt-10 ">
         <SwiperSlide>
           <div className="text center">

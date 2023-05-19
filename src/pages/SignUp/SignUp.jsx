@@ -61,7 +61,7 @@ const SignUp = () => {
                 </div>
 
                 <div className='mb-4'>
-                    <label htmlFor="text" className="block text-gray-700 font-bold mb-2">Your name</label>
+                    <label htmlFor="text" className="block text-gray-700 font-bold mb-2">Your PhotoUrl</label>
                     <div className='relative'>
                     <FaImage className="absolute text-gray-500 left-3 top-2/4 transform -translate-y-2/4" />
 
