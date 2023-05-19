@@ -9,8 +9,13 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navber = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
 
+    const handleLogOut = () => {
+        logOut()
+        .then(()=> {})
+        .then(error => console.log(error))
+    }
 
     return (
         <div className='w-full md:w-5/6 mx-auto px-3'>
@@ -42,10 +47,10 @@ const Navber = () => {
                     {user && <img className='w-11 h-11 rounded-full' src={user.photoURL} title={user.displayName}  alt="" /> }
                     
                     {user ? 
-                    <button className='bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3   font-bold py-3 px-4 rounded'>Logout</button> :
+                    <button onClick={handleLogOut} className='bg-[#f5beb0] mt-3 hover:bg-[#e7a190] mx-auto md:mx-0 mb-3   font-bold py-3 px-4 rounded'>Logout</button> :
 
                     <Link to='/login' className='inline-flex md:block items-center'>
-                    <button className='bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3   font-bold py-3 px-4 rounded'>Login</button>
+                    <button className='bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3 mt-3  font-bold py-3 px-4 rounded'>Login</button>
                     </Link>
                     }
                 </div>
