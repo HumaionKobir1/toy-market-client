@@ -4,7 +4,7 @@ import Header from '../Shared/Header/Header';
 
 const Main = () => {
     return (
-        <div>
+        <div className='bg-white'>
             <Header></Header>
             <div className='min-h-[calc(100vh-484px)]'>
                 <Outlet></Outlet>
