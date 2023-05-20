@@ -3,7 +3,7 @@ const Category = ({toyCategory}) => {
     const {photo, title, rating, price} = toyCategory;
     return (
         <div className=" rounded overflow-hidden shadow-lg">
-            <img className="w-80 h-80" src={photo} alt="Product" />
+            <img className="w-80 h-80 mx-auto" src={photo} alt="Product" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{title}</div>
                 <p className="text-gray-700 text-base">Price: ${price}</p>

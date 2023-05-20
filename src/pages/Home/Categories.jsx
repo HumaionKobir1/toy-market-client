@@ -3,14 +3,14 @@ import Category from "./Category";
 
 const Categories = () => {
     const [toyCategories, setToyCategories] = useState([]);
-    const [activeTab, setActiveTab] = useState('Digital-pets')
+    const [activeTab, setActiveTab] = useState(' ')
     useEffect(() => {
-        fetch('http://localhost:5000/allToy')
+        fetch(`http://localhost:5000/allToy/${activeTab}`)
         .then(res => res.json())
         .then(data => {
             setToyCategories(data);
         })
-    }, [])
+    }, [activeTab])
 
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
