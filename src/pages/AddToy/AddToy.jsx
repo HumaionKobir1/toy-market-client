@@ -1,16 +1,20 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 
 const AddToy = () => {
+    const {user} = useContext(AuthContext);
+
     const handleToyAdd = (event) => {
         event.preventDefault();
 
         const form = event.target;
         const photo = form.photo.value;
         const title = form.title.value;
-        const userName = form.userName.value;
-        const email = form.email.value;
+        const userName = user?.displayName;
+        const email = user?.email;
         const subCategory = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
@@ -21,7 +25,7 @@ const AddToy = () => {
         console.log(newToy);
 
         // send data to the server
-        fetch('http://localhost:5000/toy', {
+        fetch('http://localhost:5000/allToy', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -79,6 +83,7 @@ const AddToy = () => {
                         type="text"
                         id="sellerName"
                         name="userName"
+                        defaultValue={user?.displayName}
                         className="border border-gray-300 p-2 w-full"
                     />
                     </div>
@@ -88,6 +93,7 @@ const AddToy = () => {
                         type="email"
                         id="sellerEmail"
                         name="email"
+                        defaultValue={user?.email}
                         className="border border-gray-300 p-2 w-full"
                     />
                     </div>
@@ -103,9 +109,9 @@ const AddToy = () => {
                         required
                     >
                         <option value="">Select a sub-category</option>
-                        <option value="Math Toys">Digital pets</option>
-                        <option value="Language Toys">Robot kit</option>
-                        <option value="Science Toys">Toy robots</option>
+                        <option value="Digital-pets">Digital-pets</option>
+                        <option value="Robot-kit">Robot-kit</option>
+                        <option value="Toy-robots">Toy-robots</option>
                     </select>
                     </div>
                     <div className="w-full md:mb-0 mb-4">

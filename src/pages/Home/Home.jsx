@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import Carousel from "./Carousel/Carousel";
+import Categories from "./Categories";
 import PhotoGalary from "./PhotoGalary/PhotoGalary";
 import Services from "./Services";
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PhotoGalary></PhotoGalary>
+            <Categories></Categories>
             <Services></Services>
             <Carousel></Carousel>
         </div>
