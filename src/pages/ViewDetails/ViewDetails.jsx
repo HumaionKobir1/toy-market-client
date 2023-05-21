@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
     const toyDetails = useLoaderData();
@@ -39,7 +39,7 @@ const ViewDetails = () => {
                 {details}
                 </p>
             </div>
-            <button  className="bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3 mt-4  font-bold py-3 px-4 rounded w-full">Back</button>
+            <Link to='/'><button  className="bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3 mt-4  font-bold py-3 px-4 rounded w-full">Back</button></Link>
         </div>
 
         </div>
