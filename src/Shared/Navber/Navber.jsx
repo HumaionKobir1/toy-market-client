@@ -39,7 +39,7 @@ const Navber = () => {
                     <Link to="/">Blog</Link>
                 </li>
 
-                {user && 
+                {user?.email && 
                 <>
                     <li><Link to="/myToy">My Toy</Link></li>
                     <li><Link to='addToy'>Add Toy</Link> </li>
