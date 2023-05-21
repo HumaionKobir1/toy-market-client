@@ -1,6 +1,6 @@
 
 const ToyRow = ({toys}) => {
-    const {photo, title, email, subCategory, price, userName, quantity, details} = toys;
+    const {photo, title, email, subCategory, price, userName, quantity} = toys;
     return (
         <tr>
                         <td>
