@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const ToyCard = ({toy, handleDelete}) => {
     const {photo, title, email,  price, quantity, rating, _id} = toy;
@@ -31,7 +32,7 @@ const ToyCard = ({toy, handleDelete}) => {
             <div className="grid justify-center items-center">
 
             
-            <button className="bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3 mt-3  font-bold py-3 px-4 rounded">Update</button>
+            <Link to={`/updateToy/${_id}`}><button className="bg-[#f5beb0] hover:bg-[#e7a190] mx-auto md:mx-0 mb-3 mt-3  font-bold py-3 px-4 rounded">Update</button></Link>
             
             </div>
         </div>
