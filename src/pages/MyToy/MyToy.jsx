@@ -17,15 +17,33 @@ const MyToy = () => {
         })
     }, [url])
 
+    const handleDelete = id => {
+        const proceed = confirm('Are you sure you want to delete?');
+        if(proceed){
+            fetch(`http://localhost:5000/myToy/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    alert('Delete successful');
+                    const remaining = toys.filter(toy => toy._id !== id);
+                    setToys(remaining);
+                }
+            })
+        }
+    }
+
     return (
         <div>
-            <div className="bg-slate-100 md:w-5/6 mx-auto p-4">
+            <div className="bg-slate-100 md:w-5/6 mx-auto p-4 mb-6">
             <h1 className="text-center text-3xl font-semibold">My Toys</h1>
 
                 {
                     toys.map(toy => <ToyCard
                         key={toy._id}
                         toy={toy}
+                        handleDelete={handleDelete}
                     ></ToyCard> )
                 }
             </div>

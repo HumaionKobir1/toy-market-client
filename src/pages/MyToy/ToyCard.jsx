@@ -1,12 +1,14 @@
 
-const ToyCard = ({toy}) => {
-    const {photo, title, email,  price, quantity, rating} = toy;
+const ToyCard = ({toy, handleDelete}) => {
+    const {photo, title, email,  price, quantity, rating, _id} = toy;
+
+    
 
     return (
         <div className="md:flex px-3 my-10 mx-auto justify-center md:justify-between items-center w-full bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="flex gap-3">
                 <div className="grid items-center justify-center">
-                    <button className="bg-slate-900 rounded-[100%] text-white px-3 py-1 mr-3">Delete</button>
+                    <button onClick={()=> handleDelete(_id)} className="bg-slate-900 rounded-[100%] text-white px-3 py-1 mr-3">Delete</button>
                 </div>
                 <div className="py-2">
                     <img className="w-36 h-36 rounded-lg" src={photo} alt="" />
