@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const Category = ({toyCategory}) => {
-    const {photo, title, rating, price} = toyCategory;
+    const {photo, title, rating, price, _id} = toyCategory;
     return (
         <div className=" rounded overflow-hidden shadow-lg">
             <img className="w-80 h-80 mx-auto" src={photo} alt="Product" />
@@ -12,9 +13,9 @@ const Category = ({toyCategory}) => {
             </div>
             <div className="flex justify-between px-6 py-4">
                 <p className="text-gray-700 ml-1">{rating}</p>
-                <button className="bg-[#f5beb0] hover:bg-[rgb(231,161,144)] text-gray-700 font-bold py-2 px-4 rounded-full">
+                <Link to={`/details/${_id}`}><button className="bg-[#f5beb0] hover:bg-[rgb(231,161,144)] text-gray-700 font-bold py-2 px-4 rounded-full">
                 View Details
-                </button>
+                </button></Link>
             </div>
         </div>
     );
