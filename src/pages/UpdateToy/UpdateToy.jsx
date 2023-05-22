@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useTitle } from "../../Title/useTitle";
 
 const UpdateToy = () => {
     const updateToys = useLoaderData();
@@ -37,6 +38,7 @@ const UpdateToy = () => {
 
     }
 
+    useTitle('Kidol | Update');
 
     return (
         <div className="w-full md:w-5/6 mx-auto px-4 bg-slate-100 my-10">

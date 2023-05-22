@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useTitle } from "../../Title/useTitle";
 
 
 
@@ -46,6 +47,7 @@ const AddToy = () => {
         })
     }
 
+    useTitle('Kidol | AddToy');
 
     return (
         

@@ -3,6 +3,7 @@ import ToyRow from "../../Shared/AllToyTable/ToyRow";
 import { useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTitle } from "../../Title/useTitle";
 
 const AllToys = () => {
     AOS.init();
@@ -15,7 +16,7 @@ const AllToys = () => {
         const search = event.target.search.value;
         setQuery(search);
     }
-
+    useTitle('Kidol | AllToy');
     return (
         <div className="w-full md:w-5/6 mx-auto px-3 mt-10">
             <div data-aos="fade-left" className="mx-auto flex justify-center mb-4">

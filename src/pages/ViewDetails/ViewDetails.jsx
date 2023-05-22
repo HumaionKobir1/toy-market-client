@@ -1,8 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { useTitle } from "../../Title/useTitle";
 
 const ViewDetails = () => {
     const toyDetails = useLoaderData();
     const {photo, title, rating, userName, email, price, quantity, details} = toyDetails;
+    useTitle(`Kidol | ${title}`);
     return (
         <div className="md:w-5/6 mx-auto px-3 rounded-lg shadow-lg bg-slate-100 p-6">
         <div className="md:w-4/5 mx-auto bg-white rounded-lg shadow-lg p-6">

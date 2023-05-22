@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ToyCard from "./ToyCard";
 import Swal from "sweetalert2";
+import { useTitle } from "../../Title/useTitle";
 
 const MyToy = () => {
     const {user} = useContext(AuthContext);
@@ -51,6 +52,7 @@ const MyToy = () => {
           })
     }
 
+    useTitle('Kidol | MyToy');
     return (
         <div>
             <div className="bg-slate-100 md:w-5/6 mx-auto p-4 mb-6">
