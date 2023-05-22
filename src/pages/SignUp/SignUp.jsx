@@ -2,10 +2,16 @@ import { useContext, useState } from 'react';
 import { FaUser, FaLock, FaFacebook, FaGoogle, FaTwitter, FaEnvelope, FaImage } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const SignUp = () => {
+    AOS.init();
+
     const [showPassword, setShowPassword] = useState(false);
     const {createUser, updateUserData, signInWithGoogle} = useContext(AuthContext);
+    const [error, setError] = useState('')
 
     const handleRegister = event => {
         event.preventDefault();
@@ -23,9 +29,16 @@ const SignUp = () => {
             updateUserData(result.user, name, photoUrl)
             .then(()=>{
                 console.log('user name updated')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Account create successfully',
+                    icon: 'Success',
+                    confirmButtonText: 'Ok'
+                  })
             })
             .catch(error => {
-                console.log(error.message)
+                setError((error.message).slice(10, 50))
+
             })
         })
         .catch(error => console.log(error.message))
@@ -43,15 +56,23 @@ const SignUp = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            Swal.fire({
+                title: 'Success!',
+                text: 'User Added successfully',
+                icon: 'Success',
+                confirmButtonText: 'Cool'
+              })
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            setError((error.message).slice(10, 50))
+        });
     }
 
     return (
-        <div className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
+        <div data-aos="zoom-in-up" className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
             <div className="w-full  px-4 grid items-center justify-center">
                 <img
-                className="h-[500px]"
+                className="md:h-[500px] h-[400px]"
                 src="https://99dokan.com/admins/images/signin.jpg"
                 alt="Logo"
                 />
@@ -135,6 +156,9 @@ const SignUp = () => {
                                     className="font-semibold text-black border-b-2 border-gray-200 hover:border-gray-500"> the information data policy.</a>
                             </span>
                     </label>
+                </div>
+                <div className='text-center mt-2 mb-4'>
+                    <p className='text-lg font-medium text-red-900'>{error}</p>
                 </div>
                 <div className="flex items-center justify-between mt-6">
                         <button

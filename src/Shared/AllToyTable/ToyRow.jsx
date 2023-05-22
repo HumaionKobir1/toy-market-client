@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ToyRow = ({toys}) => {
-    const {photo, title, email, subCategory, price, userName, quantity} = toys;
+    AOS.init();
+
+    const {photo, title, _id, email, subCategory, price, userName, quantity} = toys;
     return (
-        <tr>
+        <tr data-aos="zoom-in-up">
                         <td>
                         <div className="flex items-center space-x-3">
                             <div className="avatar">
@@ -25,7 +30,7 @@ const ToyRow = ({toys}) => {
                         <td>{quantity}</td>
                         <td>${price}</td>
                         <th>
-                        <button className="btn btn-ghost btn-xs">details</button>
+                        <Link to={`/details/${_id}`}><button className="btn btn-ghost btn-xs">details</button></Link>
                         </th>
                     </tr>
     );

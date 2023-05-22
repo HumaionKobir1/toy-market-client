@@ -43,17 +43,17 @@ const router = createBrowserRouter([
         {
           path: 'details/:id',
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params})=> fetch(`https://toy-market-server-humaionkobir341-gmailcom.vercel.app/toy/${params.id}`)
         },
         {
           path: '/allToys',
           element: <AllToys></AllToys>,
-          loader: ()=> fetch('http://localhost:5000/allToy')
+          loader: ()=> fetch('https://toy-market-server-humaionkobir341-gmailcom.vercel.app/allToy')
         },
         {
           path: 'updateToy/:id',
           element: <UpdateToy></UpdateToy>,
-          loader: ({params})=> fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params})=> fetch(`https://toy-market-server-humaionkobir341-gmailcom.vercel.app/toy/${params.id}`)
         },
         {
           path: '/blog',

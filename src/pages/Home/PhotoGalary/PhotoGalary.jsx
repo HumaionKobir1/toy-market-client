@@ -10,13 +10,18 @@ import "./galary.css";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PhotoGalary = () => {
+  AOS.init();
+
     return (
-      <div className="w-full md:w-5/6 mx-auto px-3 bg-[#f5cfb7] ">
+      <div  className="w-full md:w-5/6 mx-auto px-3 bg-[#f5cfb7] ">
         <h1 className="text-4xl text-center font-semibold pt-5 text-slate-800">Toy Gallery</h1>
         <hr className="h-2 rounded-xl w-56 mx-auto bg-gray-700"/>
         <Swiper
+          data-aos="fade-left"
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}

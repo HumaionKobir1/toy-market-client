@@ -1,10 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { FaUser, FaLock, FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Login = () => {
+    AOS.init();
+
     const {signIn, signInWithGoogle} = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -21,6 +26,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            
         })
         .catch(error => console.log(error.message))
     }
@@ -31,11 +37,15 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             navigate(from, {replace: true});
+            
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            setError((error.message).slice(10, 50))
+
+        });
     }
     return (
-        <div className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
+        <div data-aos="zoom-in-up" className="flex shadow-2xl bg-base-100 flex-col md:flex-row gap-10 md:gap-3 w-full md:w-5/6 mx-auto my-5 px-3 md:py-24 py-10 items-center justify-center ">
             <div className="w-full   px-4 grid items-center justify-center">
                 <img
                 className=""
@@ -92,6 +102,9 @@ const Login = () => {
                     />
                     <span className="text-sm text-gray-700">Remember me</span>
                     </label>
+                </div>
+                <div className='text-center mt-2 mb-4'>
+                    <p className='text-lg font-medium text-red-900'>{error}</p>
                 </div>
                 <div>
                     <button

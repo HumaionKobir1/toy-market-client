@@ -1,11 +1,14 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Category = ({toyCategory}) => {
+    AOS.init()
     const {photo, title, rating, price, _id} = toyCategory;
     return (
-        <div className=" rounded overflow-hidden shadow-lg">
+        <div data-aos="fade-up" className=" rounded overflow-hidden shadow-lg">
             <img className="w-80 h-80 mx-auto" src={photo} alt="Product" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{title}</div>

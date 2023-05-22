@@ -5,7 +5,7 @@ const Categories = () => {
     const [toyCategories, setToyCategories] = useState([]);
     const [activeTab, setActiveTab] = useState(' ')
     useEffect(() => {
-        fetch(`http://localhost:5000/allToy/${activeTab}`)
+        fetch(`https://toy-market-server-humaionkobir341-gmailcom.vercel.app/allToy/${activeTab}`)
         .then(res => res.json())
         .then(data => {
             setToyCategories(data);
