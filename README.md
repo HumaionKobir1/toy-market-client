@@ -2,9 +2,8 @@
 <h1>Kidol Toy Markets</h1>
 -   You can register
 -   You can Add toy after login
--   Update your toys
--   A instructor can make classes, see them and update them
--   An admin can approve/deny and send feedback on class made by instructors
+-   You can see toy details after login
+-   A user can add classes, see them and update them
 <h1>Package used in this project</h1>
 -   emotion/react
 -   react-spring/web
@@ -19,4 +18,4 @@
 -   sweetalert2
 -   swiper
 
-<p>Live Site Link: https://milestone-12-1e7ce.web.app/</p>
+<p>Live Site Link: https://toy-market-e6758.web.app/</p>
