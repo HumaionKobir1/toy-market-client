@@ -110,6 +110,15 @@ const Navber = () => {
                             </Link>
                             </li>
                             <li>
+                                <Link to="/allToys">All Toys</Link>
+                            </li>
+                            {user?.email && 
+                            <>
+                                <li><Link to="/myToy">My Toy</Link></li>
+                                <li><Link to='addToy'>Add Toy</Link> </li>
+                            </>
+                            }
+                            <li>
                             <Link
                                 to='/login'
                                 className='font-medium tracking-wide  transition-colors duration-200 hover:text-blue-400'
